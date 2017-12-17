@@ -1,5 +1,3 @@
-require 'pry'
-
 class Application
   @@items = Array.new
 
