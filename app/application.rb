@@ -8,7 +8,6 @@ class Application
     item_name = req.path.split(/items/).last.downcase.delete('/')
     item = @@items.detect{ |i| i.name.downcase == item_name}
 
-    binding.pry
     if @@items.include?(item)
       resp.write item.price
       resp.status = 200
