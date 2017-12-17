@@ -6,7 +6,7 @@ class Application
     req = Rack::Request.new(env)
 
     item_name = req.path.split(/items/).last.downcase
-    item = @@items.find{ |i| i.name.downcase == item_name}
+    item = @@items.detect{ |i| i.name.downcase == item_name}
 
     if @@items.include?(item)
       resp.write item.price
