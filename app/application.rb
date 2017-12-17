@@ -1,3 +1,5 @@
+require 'pry'
+
 class Application
   @@items = Array.new
 
@@ -8,6 +10,7 @@ class Application
     item_name = req.path.split(/items/).last.downcase
     item = @@items.detect{ |i| i.name.downcase == item_name}
 
+    binding.pry
     if @@items.include?(item)
       resp.write item.price
       resp.status = 200
